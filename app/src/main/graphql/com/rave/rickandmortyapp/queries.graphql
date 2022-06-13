@@ -1,0 +1,131 @@
+query CharacterList($page: Int, $filter: FilterCharacter) {
+  characters(page: $page, filter: $filter) {
+    info {
+      count
+      pages
+      next
+      prev
+    }
+    results {
+      id
+      name
+      image
+      status
+      species
+      type
+      gender
+      origin {
+        id
+        name
+        type
+        dimension
+        residents {
+          id
+          name
+          image
+          status
+          species
+          type
+          gender
+          created
+        }
+      }
+      location {
+        id
+        name
+        type
+        dimension
+        residents {
+          id
+          name
+          image
+          status
+          species
+          type
+          gender
+          created
+        }
+      }
+      episode {
+        id
+        name
+        air_date
+        episode
+        characters {
+          id
+          name
+          image
+          status
+          species
+          type
+          gender
+          created
+        }
+        created
+      }
+      created
+    }
+  }
+}
+
+query CharacterById($id: ID!) {
+  character(id: $id) {
+    id
+    name
+    image
+    status
+    species
+    type
+    gender
+    origin {
+      id
+      name
+      type
+      dimension
+      residents {
+        id
+        name
+        image
+        status
+        species
+        type
+        gender
+        created
+      }
+    }
+    location {
+      id
+      name
+      type
+      dimension
+      residents {
+        id
+        name
+        image
+        status
+        species
+        type
+        gender
+        created
+      }
+    }
+    episode {
+      id
+      name
+      air_date
+      episode
+      characters {
+        id
+        name
+        image
+        status
+        species
+        type
+        gender
+        created
+      }
+      created
+    }
+    created
+  }
+}

@@ -7,24 +7,24 @@ import com.rave.rickandmortyapp.models.toCharacter
 import com.rave.type.FilterCharacter
 
 class Repository {
-  private val apolloClient = RemoteDataSource.apolloClient
+    private val apolloClient = RemoteDataSource.apolloClient
 
-  suspend fun getCharacterList(
-    page: Int?,
-    filterCharacter: FilterCharacter?,
-  ): List<Character?>? {
-    val result =
-      apolloClient.query(CharacterListQuery(page, filterCharacter)).execute()
+    suspend fun getCharacterList(
+        page: Int?,
+        filterCharacter: FilterCharacter?,
+    ): List<Character?>? {
+        val result =
+            apolloClient.query(CharacterListQuery(page, filterCharacter)).execute()
 
-    return result.data?.characters?.results?.map { it?.toCharacter() }
-  }
+        return result.data?.characters?.results?.map { it?.toCharacter() }
+    }
 
-  suspend fun getCharacterById(
-    id: String,
-  ): Character? {
-    val result =
-      apolloClient.query(CharacterByIdQuery(id)).execute()
+    suspend fun getCharacterById(
+        id: String,
+    ): Character? {
+        val result =
+            apolloClient.query(CharacterByIdQuery(id)).execute()
 
-    return result.data?.character?.toCharacter()
-  }
+        return result.data?.character?.toCharacter()
+    }
 }

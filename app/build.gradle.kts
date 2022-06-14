@@ -8,7 +8,7 @@ android {
   compileSdk = 32
 
   defaultConfig {
-    applicationId = "com.fireninja.rickandmorty"
+    applicationId = "com.rave.rickandmorty"
     minSdk = 21
     targetSdk = 32
     versionCode = 1

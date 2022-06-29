@@ -6,7 +6,7 @@ import com.rave.rickandmortyapp.models.Character
 import com.rave.rickandmortyapp.models.toCharacter
 import com.rave.type.FilterCharacter
 
-class Repository {
+object Repository {
     private val apolloClient = RemoteDataSource.apolloClient
 
     suspend fun getCharacterList(

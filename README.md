@@ -7,7 +7,7 @@ You will need to enable
 to complete this assignment.
 
 Please refer
-to [this notion board](https://buttery-mall-93e.notion.site/ece923aa68284a12a53076196b7ebff4?v=f760eeb1522b4588a62737077637fabd)
+to [this notion board](https://gitlab.com/ravebizz-android-training/sep-19-squad/Rick-And-Morty-v1.git)
 and duplicate the project board for a link to the wireframe and the list of tasks required in order
 to complete the assignment.
 

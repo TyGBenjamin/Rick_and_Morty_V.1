@@ -2,6 +2,17 @@ plugins {
   id("com.android.application")
   id("org.jetbrains.kotlin.android")
   id("com.apollographql.apollo3").version("3.3.0")
+  id("androidx.navigation.safeargs")
+}
+
+buildscript {
+  repositories {
+    google()
+  }
+  dependencies {
+    val nav_version = "2.5.2"
+    classpath("androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version")
+  }
 }
 
 android {
@@ -52,4 +63,7 @@ dependencies {
   androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
 
   implementation("com.apollographql.apollo3:apollo-runtime:3.3.0")
+  implementation("androidx.navigation:navigation-fragment-ktx:2.5.2")
+  implementation("androidx.navigation:navigation-ui-ktx:2.5.2")
+  implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
 }

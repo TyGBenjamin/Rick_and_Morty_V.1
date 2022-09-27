@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Rick And Morty App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_charcater_fragment">Hello charcater fragment</string>
+    <string name="hello_dashboard_fragment">Hello dashboard fragment</string>
+    <string name="hello_charcaterFragment">Hello Charcater Fragment</string>
+    <string name="hello_dashboardFragment">Hello Dashboard Fragment</string>
+    <string name="tyler_age_28">tyler age: 28</string>
 </resources>

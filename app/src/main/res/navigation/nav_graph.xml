@@ -6,11 +6,6 @@
     app:startDestination="@id/dashboard_Fragment">
 
     <fragment
-        android:id="@+id/charcater_detail_Fragment"
-        android:name="com.rave.rickandmortyapp.charcater_detail_Fragment"
-        android:label="fragment_charcater_detail_"
-        tools:layout="@layout/fragment_charcater_detail_" />
-    <fragment
         android:id="@+id/dashboard_Fragment"
         android:name="com.rave.rickandmortyapp.Dashboard_Fragment"
         android:label="fragment_dashboard_"
@@ -19,4 +14,15 @@
             android:id="@+id/action_dashboard_Fragment_to_charcater_detail_Fragment"
             app:destination="@id/charcater_detail_Fragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/charcater_detail_Fragment"
+        android:name="com.rave.rickandmortyapp.Charcater_Detail_Fragment"
+        android:label="fragment_charcater_detail_"
+        tools:layout="@layout/fragment_charcater_detail_" >
+        <argument
+            android:name="characterId"
+            app:argType="string" />
+    </fragment>
+
 </navigation>

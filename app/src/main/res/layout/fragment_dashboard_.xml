@@ -18,21 +18,21 @@
         />
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_dashboardFragment"
-        android:textAlignment="center" />
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/hello_dashboardFragment"-->
+<!--        android:textAlignment="center" />-->
 
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="219dp"
-        android:layout_height="64dp"
-        android:layout_marginVertical="300sp"
-        android:layout_marginHorizontal="100sp"
-        android:text="navigate to charcater"
+<!--    <Button-->
+<!--        android:id="@+id/button"-->
+<!--        android:layout_width="219dp"-->
+<!--        android:layout_height="64dp"-->
+<!--        android:layout_marginVertical="300sp"-->
+<!--        android:layout_marginHorizontal="100sp"-->
+<!--        android:text="navigate to charcater"-->
 
-        />
+<!--        />-->
 
 </FrameLayout>

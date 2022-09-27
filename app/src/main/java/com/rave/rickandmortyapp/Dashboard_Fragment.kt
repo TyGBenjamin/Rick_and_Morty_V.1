@@ -29,11 +29,9 @@ class Dashboard_Fragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
-    private val binding by lazy { FragmentDashboardBinding.inflate(layoutInflater)  }
+    private val binding by lazy { FragmentDashboardBinding.inflate(layoutInflater) }
     private val viewModel by viewModels<ViewModel>()
-    private val charcaterAdapter by lazy {CharcaterAdapter()}
-
-
+//    private val charcaterAdapter by lazy { CharcaterAdapter() }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,16 +57,26 @@ class Dashboard_Fragment : Fragment() {
 //        }
 //        return view
 
-       //binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        //binding = FragmentDashboardBinding.inflate(inflater, container, false)
 
         return binding.root
     }
 
-    fun initViews()= with(binding){
-        rvView.adapter = charcaterAdapter
-        viewModel.viewState.observe(this@Dashboard_Fragment){ viewState ->
-           charcaterAdapter.addData(viewState as List<Character>)
+    fun initViews() = with(binding) {
+        viewModel.viewState.observe(this@Dashboard_Fragment) { viewState ->
+        rvView.adapter = CharcaterAdapter(::navigateToDetails).apply {
+            addData(viewState as List<Character>)
         }
+//            charcaterAdapter.addData(viewState as List<Character>)
+        }
+
+    }
+
+    fun navigateToDetails(characterId: String) {
+        val action = Dashboard_FragmentDirections.actionDashboardFragmentToCharcaterDetailFragment(
+            characterId
+        )
+        findNavController().navigate(action)
     }
 
     companion object {

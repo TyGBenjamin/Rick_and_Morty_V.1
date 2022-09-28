@@ -7,3 +7,5 @@ package com.rave.rickandmortyapp.data
         data class Error<T>(val message: String): Resource<T>(message = message)
     }
 
+
+

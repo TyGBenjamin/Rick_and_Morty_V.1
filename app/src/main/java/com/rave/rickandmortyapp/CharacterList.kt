@@ -41,10 +41,7 @@ class CharacterList : Fragment() {
     }
 
 
-    private fun navToDetails(characterId: String){
-        val action = CharacterListDirections.actionCharacterListToCharacterDetail()
-        findNavController().navigate(action)
-    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,6 +51,11 @@ class CharacterList : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+    }
+
+    private fun navToDetails(characterId: String){
+        val action = CharacterListDirections.actionCharacterListToCharacterDetail()
+        findNavController().navigate(action)
     }
     //
 //    fun initViews() = with(binding){

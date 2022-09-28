@@ -11,16 +11,12 @@ import kotlinx.coroutines.launch
 class CharacterDetailViewModel : ViewModel() {
     // TODO: Implement the ViewModel
     private val repo : Repository = Repository
-    private val _viewState = MutableLiveData<List<Character?>?>()
-    val viewState: LiveData<List<Character?>?> = _viewState
+    private val _viewState = MutableLiveData<Character?>()
+    val viewState: LiveData<Character?> = _viewState
 
-    init {
-        getCharacterById()
-
-    }
-    private fun getCharacterById(){
+    private fun getCharacterById(characterId: String){
         viewModelScope.launch {
-            _viewState.value = repo.getCharacterById()
+            _viewState.value = repo.getCharacterById(characterId)
 
         }
     }

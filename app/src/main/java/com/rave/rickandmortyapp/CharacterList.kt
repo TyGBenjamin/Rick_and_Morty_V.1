@@ -19,15 +19,15 @@ import com.rave.rickandmortyapp.databinding.FragmentCharacterListBinding
 import com.rave.rickandmortyapp.models.Character
 
 
-
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+
 class CharacterList : Fragment() {
 
     private var param1: String? = null
     private var param2: String? = null
 
-    private  val binding by lazy {FragmentCharacterListBinding.inflate(layoutInflater)}
+    private val binding by lazy { FragmentCharacterListBinding.inflate(layoutInflater) }
 
     private val viewModel by viewModels<CharacterViewModel>()
 //    private val charAdapter by lazy {CharAdapter()}
@@ -35,12 +35,10 @@ class CharacterList : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ) : View? {
+    ): View? {
 
         return binding.root
     }
-
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,22 +51,18 @@ class CharacterList : Fragment() {
         }
     }
 
-    private fun navToDetails(characterId: String){
-        val action = CharacterListDirections.actionCharacterListToCharacterDetail()
+    private fun navToDetails(characterId: String) {
+        val action = CharacterListDirections.actionCharacterListToCharacterDetail(characterId)
         findNavController().navigate(action)
     }
-    //
-//    fun initViews() = with(binding){
-//        recyclerView.adapter = mainAdapter
-//        viewModel.viewState.observe(this@FirstFragment){ viewState ->
-//            mainAdapter.addData(viewState as List<Character>)
-//        }
-//
-//    }
-    private fun initViews() = with(binding){
-        viewModel.viewState.observe(this@CharacterList){
-                viewState -> rvView.adapter = CharAdapter().apply{ addData(viewState as List<Character>)
-        }
+
+    private fun initViews() = with(binding) {
+        viewModel.viewState.observe(this@CharacterList) { viewState ->
+            rvView.adapter = CharAdapter(
+                this@CharacterList::navToDetails
+            ).apply {
+                addData(viewState as List<Character>)
+            }
 
         }
     }
@@ -92,7 +86,6 @@ class CharacterList : Fragment() {
                 }
             }
     }
-
 
 
 }

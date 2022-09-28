@@ -10,12 +10,15 @@ import com.rave.rickandmortyapp.databinding.ItemListBinding
 import com.rave.rickandmortyapp.models.Character
 
 
-class CharAdapter():RecyclerView.Adapter<CharAdapter.CharViewHolder>() {
+class CharAdapter(
+    private val navigateToDetails: (characterId: String) -> Unit
+):RecyclerView.Adapter<CharAdapter.CharViewHolder>() {
 
     private var charData: List<Character> = emptyList()
 
     class CharViewHolder(
-        private val binding: ItemListBinding
+        private val binding: ItemListBinding,
+        private val navigateToDetails: (characterId: String) -> Unit
     ): RecyclerView.ViewHolder(binding.root){
         fun apply(item: Character){
             binding.tvName.text = item.name
@@ -24,6 +27,10 @@ class CharAdapter():RecyclerView.Adapter<CharAdapter.CharViewHolder>() {
             binding.tvRace.text = item.species
             binding.tvLocation.text = item.location?.name
             binding.tvEpisode.text = item.episode?.get(0)?.name
+
+            binding.root.setOnClickListener {
+                navigateToDetails(item.id!!)
+            }
 
 //            binding.cardview.setOnClickListener{clickListener.onClick(item)}
         }
@@ -35,7 +42,7 @@ class CharAdapter():RecyclerView.Adapter<CharAdapter.CharViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharViewHolder {
         val from = LayoutInflater.from(parent.context)
         val binding = ItemListBinding.inflate(from, parent, false)
-        return CharViewHolder(binding)
+        return CharViewHolder(binding, navigateToDetails)
 
     }
 

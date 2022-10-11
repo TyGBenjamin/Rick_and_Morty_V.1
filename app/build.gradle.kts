@@ -2,6 +2,7 @@ plugins {
   id("com.android.application")
   id("org.jetbrains.kotlin.android")
   id("com.apollographql.apollo3").version("3.3.0")
+  id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -50,6 +51,12 @@ dependencies {
   testImplementation("junit:junit:4.13.2")
   androidTestImplementation("androidx.test.ext:junit:1.1.3")
   androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
-
+  implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
   implementation("com.apollographql.apollo3:apollo-runtime:3.3.0")
+  implementation("androidx.navigation:navigation-fragment-ktx:2.5.2")
+  implementation("androidx.navigation:navigation-ui-ktx:2.5.2")
+  implementation("androidx.multidex:multidex:2.0.1")
+  implementation("androidx.activity:activity-ktx:1.5.0")
+  implementation("io.coil-kt:coil:2.2.1")
+  implementation("androidx.cardview:cardview:1.0.0")
 }
